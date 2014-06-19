@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DADOS 3.0 - Check Point</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jmpress/0.4.5/jmpress.min.js"></script>
+    <script src="js/presentation.js"></script>
+    <link href="css/presentation.css" rel="stylesheet"/>
+  </head>
+  <body ng-app="presentation">
+    <div id="impress" data-template="mytemplate">
+      <div class="step">
+        <h1>DADOS 3.0 Checkpoint</h1>
+      </div>
+      <div class="step">
+        <h2>Three Major Goals</h2>
+        <ol>
+          <li>Data Integrity - data must be an accurate representation of the truth</li>
+          <li>Stability - service and data must always be available</li>
+          <li>Flexibility - system can support growth due to ever changing business needs</li>
+        </ol>
+	<h3>DADOS as a Platform</h3>
+	<p>
+	DADOS 3.0 will be designed as a platform constructed with two different tools:
+	</p>
+	<ul>
+          <li>Electronic Data Capture System - This component's goal is to allow the user to enter data into DADOS for storage.</li>
+	  <li>Reporting System - This component's goal is to provide the user with analysis about the data stored within DADOS.</li>
+	</ul>
+	<p>
+	  Both systems will appear under the same UI as DADOS 3.0, but from an architecture point of view will have separate applications and databases. This will allow for optimal performance.
+	</p>
+      </div>
+      <div class="step">
+	<h2>Technical Decisions</h2>
+	<p>
+	  To ensure data integrity, stability, and flexibility, the overall system design must be simple. This will be achieved through the following design decisions:
+	</p>
+	<ol>
+	  <li>No delete policy and automatic versioning of all data.</li>
+	  <li>Appropriate validation and error handling to ensure data integrity.</li>
+          <li>Fail first development - system is designed to crash on any errors in development to ensure stability in production.</li>
+	  <li>Module based system to allow for flexible growth.</li>
+	  <li>Data Models structured using Generics to allow for change</li>
+	  <li>Security first development - ensure that data is safe to avoid manipulation of data</li>
+	</ol>
+      </div>
+      <div class="step">
+	<h2>Road Map</h2>
+	<p>
+	  The current development roadmap:
+        </p>
+	<ol>
+	  <li>Planning &amp; Prototyping</li>
+          <li>Users &amp; Authentication</li>
+	  <li>Module System</li>
+	  <li>Core Modules
+	    <ol>
+              <li>Groups, roles, &amp; policies</li>
+	      <li>Instances</li>
+	      <li>Studies</li>
+              <li>Time Points (a.k.a. Folder system)</li>
+	      <li>Forms
+	        <ul>
+                  <li>Questions</li>
+                  <li>Answers</li>
+		</ul>
+	      </li>
+	    </ol>
+	  </li>
+	  <li>Reporting Database &amp; Engine</li>
+	  <li>LDAP Authentication</li>
+	</ol>
+      </div>
+      <div class="step">
+	<h2>Application State</h2>
+	<p>
+          The design goal of DADOS 3.0 is to create a simple state machine which uses modules that follow a simple workflow. For future development, workflow can be defined per module allowing for increased flexibility and complexity. Below is a simplified state diagram showing how the end user will interact with the system.
+	</p>
+        <p class="center">
+          <img src="https://www.lucidchart.com/publicSegments/view/53a30c82-0dc0-404b-a079-5f850a009457/image.png"/>
+	</p>
+      </div>
+      <div class="step">
+	<h2>Home Page Mock Up</h2>
+        <p class="center">
+	<img src="https://www.lucidchart.com/publicSegments/view/53a32449-2d10-4c90-91af-27ed0a00408a/image.png" />
+	</p>
+      </div>
+      <div class="step">
+        <h2>Object List Mock Up</h2>
+	<img src="https://www.lucidchart.com/publicSegments/view/53a3253b-499c-4eb7-a70e-4e6d0a00ded8/image.png" />
+      </div>
+      <div class="step">
+        <h2>Manage Object Mock Up</h2>
+        <p class="center">
+	<img src="https://www.lucidchart.com/publicSegments/view/53a32593-4660-469e-b12f-2ae90a00ded8/image.png" />
+	</p>
+      </div>
+    </div>
+  </body>
+</html>

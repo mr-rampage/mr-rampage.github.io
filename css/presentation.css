@@ -1,0 +1,43 @@
+body {
+  font-size: 2em;
+}
+
+/** ANIMATION **/
+.step {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-transition: opacity 1s;
+  -moz-transition:    opacity 1s;
+  -ms-transition:     opacity 1s;
+  -o-transition:      opacity 1s;
+  transition:         opacity 1s;
+  opacity: 0.1;
+
+  font-size: 1em;
+  background-color: white;
+  display: block;
+  padding: 1em;
+  color: rgb(102, 102, 102);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+  letter-spacing: -1px;
+}
+.step.active {
+  -webkit-transition: opacity 1s;
+  -moz-transition:    opacity 1s;
+  -ms-transition:     opacity 1s;
+  -o-transition:      opacity 1s;
+  transition:         opacity 1s;
+  opacity: 1;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+.step img {
+  width: auto;
+  height: auto;
+}
+
+.center {
+  text-align: center;
+}
