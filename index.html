@@ -20,6 +20,8 @@
           <li>Stability - service and data must always be available</li>
           <li>Flexibility - system can support growth due to ever changing business needs</li>
         </ol>
+      </div>
+      <div class="step">
 	<h3>DADOS as a Platform</h3>
 	<p>
 	DADOS 3.0 will be designed as a platform constructed with two different tools:
@@ -29,22 +31,11 @@
 	  <li>Reporting System - This component's goal is to provide the user with analysis about the data stored within DADOS.</li>
 	</ul>
 	<p>
-	  Both systems will appear under the same UI as DADOS 3.0, but from an architecture point of view will have separate applications and databases. This will allow for optimal performance.
+	  Both systems will appear under the same UI as DADOS 3.0, but from an architecture point of view will have separate applications and databases.
 	</p>
-      </div>
-      <div class="step">
-	<h2>Technical Decisions</h2>
-	<p>
-	  To ensure data integrity, stability, and flexibility, the overall system design must be simple. This will be achieved through the following design decisions:
+	<p class="center">
+          <img src="https://www.lucidchart.com/publicSegments/view/53a33939-8fc8-4402-940c-39d50a00408a/image.png" />
 	</p>
-	<ol>
-	  <li>No delete policy and automatic versioning of all data.</li>
-	  <li>Appropriate validation and error handling to ensure data integrity.</li>
-          <li>Fail first development - system is designed to crash on any errors in development to ensure stability in production.</li>
-	  <li>Module based system to allow for flexible growth.</li>
-	  <li>Data Models structured using Generics to allow for change</li>
-	  <li>Security first development - ensure that data is safe to avoid manipulation of data</li>
-	</ol>
       </div>
       <div class="step">
 	<h2>Road Map</h2>
@@ -57,16 +48,16 @@
 	  <li>Module System</li>
 	  <li>Core Modules
 	    <ol>
-              <li>Groups, roles, &amp; policies</li>
-	      <li>Instances</li>
-	      <li>Studies</li>
-              <li>Time Points (a.k.a. Folder system)</li>
 	      <li>Forms
 	        <ul>
                   <li>Questions</li>
                   <li>Answers</li>
 		</ul>
 	      </li>
+              <li>Groups, roles, &amp; policies</li>
+	      <li>Instances</li>
+	      <li>Studies</li>
+              <li>Time Points (a.k.a. Folder system)</li>
 	    </ol>
 	  </li>
 	  <li>Reporting Database &amp; Engine</li>
@@ -85,17 +76,19 @@
       <div class="step">
 	<h2>Home Page Mock Up</h2>
         <p class="center">
-	<img src="https://www.lucidchart.com/publicSegments/view/53a32449-2d10-4c90-91af-27ed0a00408a/image.png" />
+	  <img src="https://www.lucidchart.com/publicSegments/view/53a32449-2d10-4c90-91af-27ed0a00408a/image.png" />
 	</p>
       </div>
       <div class="step">
         <h2>Object List Mock Up</h2>
-	<img src="https://www.lucidchart.com/publicSegments/view/53a3253b-499c-4eb7-a70e-4e6d0a00ded8/image.png" />
+	<p class="center">
+	  <img src="https://www.lucidchart.com/publicSegments/view/53a3253b-499c-4eb7-a70e-4e6d0a00ded8/image.png" />
+	</p>
       </div>
       <div class="step">
         <h2>Manage Object Mock Up</h2>
         <p class="center">
-	<img src="https://www.lucidchart.com/publicSegments/view/53a32593-4660-469e-b12f-2ae90a00ded8/image.png" />
+	  <img src="https://www.lucidchart.com/publicSegments/view/53a32593-4660-469e-b12f-2ae90a00ded8/image.png" />
 	</p>
       </div>
     </div>

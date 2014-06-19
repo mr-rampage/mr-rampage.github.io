@@ -41,3 +41,7 @@ h1, h2 {
 .center {
   text-align: center;
 }
+
+ol li ol {
+  list-style-type: lower-alpha;
+}
