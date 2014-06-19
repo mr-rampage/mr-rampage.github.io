@@ -31,6 +31,12 @@ $(function() {
   );
 
   $('#impress').jmpress({
+    viewPort: {
+      width: width * 1.1,
+      height: height * 1.1,
+      maxScale: 2,
+      zoomable: 10
+    },
     hash : { use: false },
     animation: {
       transitionDuration: '2s',
