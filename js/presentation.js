@@ -8,9 +8,9 @@ $(function() {
   var height = $(window).height();
   var depth = 1024;
 
-  $('.step').each(function(index) {
-    $(this).css('width', width - 96);
-    $(this).css('height', height * 9 / 10);
+  $('.step').each(function() {
+    $(this).css('width', width * 0.9);
+    $(this).css('height', height * 0.9);
   });
 
   $.jmpress("template", "mytemplate", {
@@ -30,7 +30,7 @@ $(function() {
     }
   );
 
-  $('#impress').jmpress({ 
+  $('#impress').jmpress({
     hash : { use: false },
     animation: {
       transitionDuration: '2s',

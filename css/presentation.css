@@ -33,9 +33,14 @@ h1, h2 {
   margin: 0;
 }
 
-.step img {
-  width: auto;
+.step .fill-width {
+  width: 100%;
   height: auto;
+}
+
+.step .fill-height {
+  width: auto;
+  height: 100%;
 }
 
 .center {
