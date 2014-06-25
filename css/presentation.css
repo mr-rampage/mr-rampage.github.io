@@ -1,5 +1,6 @@
 body {
-  font-size: 2em;
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 
 /** ANIMATION **/
@@ -43,6 +44,15 @@ h1, h2 {
 
 .center {
   text-align: center;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.thumbnail {
+  max-width: 320px;
+  height: auto;
 }
 
 ol li ol {
