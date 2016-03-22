@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Clean Code - Unit Testing</title>
+    <link href='//fonts.googleapis.com/css?family=Kadwa' rel='stylesheet' type='text/css'>
     <link href="css/presentation.css" rel="stylesheet"/>
-    <style>
-.editor {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-#editor {
-  position: absolute;
-  top: 0;
-  bottom: 100%;
-  right: 0;
-  left: 0;
-}
-    </style>
   </head>
   <body>
     <div id="impress">
+      <div class="step">
+        <h1>Clean Code - Chapter 9: Unit Test</h1>
+        <blockquote>
+          <p>
+            Test code is just as important as production code.
+          </p>
+        </blockquote>
+      </div>
+      <div class="step">
+        <h1>Tests are the requirements</h1>
+        <p>See Ramda.evolve.js</p>
+      </div>
+      <div class="step">
+        <h1>Tests allow for confident changes</h1>
+      </div>
+      <div class="step">
+        <h1>Tests allow for clean code</h1>
+        <blockquote>
+          <p>If you're code is easy to test, then you're on the right track</p>
+        </blockquote>
+      </div>
+      <div class="step">
+        <h1>Let's improve a test</h1>
+        <blockquote>
+          <p>The best Email validator tested with JUnit</p>
+        </blockquote>
+      </div>
       <div class="step">
         <h1>TDD</h1>
         <ol>
@@ -32,69 +46,114 @@
         </ol>
       </div>
       <div class="step">
-        Goodbye!
+        <h1>What makes a clean test?</h1>
+        <ol>
+          <li>Readable</li>
+          <li>Readable</li>
+          <li>Readable</li>
+        </ol>
+        <blockquote>
+          <p>In a test you want to say a lot with as few expressions as possible.</p>
+        </blockquote>
+        <p>... probably applies to all code.</p>
+      </div>
+      <div class="step">
+        <h2>What makes readable code?</h2>
+        <ol>
+          <li>Simple</li>
+          <li>Succinct</li>
+          <li>Expressive</li>
+        </ol>
+        <blockquote>
+          <p>... it need not be as efficient as production code.</p>
+        </blockquote>
+      </div>
+      <div class="step">
+        <h1>How do you make clean tests?</h1>
+        <ol>
+          <li>Build (Given) - test data</li>
+          <li>Operate (When) - operate on test data</li>
+          <li>Check (Then) - validate the operation</li>
+        </ol>
+      </div>
+      <div class="step">
+        <h1>One Assert per Test</h1>
+        <ol>
+          <li>Use a parent class to define the Build &amp; Operate</li>
+          <li>Use subclasses to validate</li>
+        </ol>
+        <p>
+          Uncle Bob prefers multiple assertions for single concepts.
+        </p>
+        <p>See example</p>
+      </div>
+      <div class="step">
+        <h1>One Concept per Test</h1>
+        <ol>
+          <li>Keep as close to domain language as possible</li>
+        </ol>
+        <p>See example</p>
+      </div>
+      <div class="step">
+        <h1>F.I.R.S.T</h1>
+        <ol>
+          <li>F - Fast. Tests should be quick.</li>
+          <li>I - Independent. Tests should not depend on each other.</li>
+          <li>R - Repeatable. Tests should be repeatable in any environment.</li>
+          <li>S - Self-Validating. Tests should have a boolean output.</li>
+          <li>T - Timely. Tests should be written just before production code.</li>
+        </ol>
+      </div>
+      <div class="step">
+        <h1>Readable Tests with Hamcrest Matchers</h1>
+        <blockquote>
+        <p>
+this syntax allows you to think in terms of subject, verb, object (assert "x is 3") rather than assertEquals, which uses verb, object, subject (assert "equals 3 x")
+        </p>
+        </blockquote>
+        <pre>
+assertThat([value], [matcher statement]);
+
+@Test
+public void testHaveOnlyEvenNumbers(){
+  List<Integer> numbers  = Arrays.asList(2, 4, 6, 8, 10);
+  assertThat(numbers, is(evenNumbers()));
+}
+        </pre>
+      </div>
+      <div class="step">
+        <h1>Questions?</h1>
+        <ol>
+          <li>Pure javascript - How to test wrapped code?</li>
+          <li>Karma? Directives, Providers, ...</li>
+          <li>Other</li>
+        </ol>
       </div>
     </div>
 
-    <div id="editor">
-Some code
-    </div>
-
-    <div class="editor">
-      <button type="button" onclick="toggleEditor(this);">Open</button>
-    </div>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/theme-monokai.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/mode-java.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/impress.js/0.5.3/impress.min.js"></script>
-    <script>impress().init();</script>
     <script>
+function random(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
 var maxWidth = window.innerWidth;
 var maxHeight = window.innerHeight;
 
-var elements = document.querySelectorAll('.step');
+var elements = document.querySelectorAll('#impress > .step');
 for (var i = elements.length; i--;) {
   var element = elements[i];
   element.style.width = 0.9 * maxWidth + "px";
   element.style.height = 0.9 * maxHeight + "px";
+  element.setAttribute("data-x", random(1000));
+  element.setAttribute("data-y", random(1000));
+  element.setAttribute("data-z", random(1000));
+  element.setAttribute("data-rotate-x", random(180));
+  element.setAttribute("data-rotate-y", random(180));
+  element.setAttribute("data-rotate-z", random(180));
 };
     </script>
-    <script>
-var editor = ace.edit("editor");
-editor.setTheme("ace/theme/monokai");
-var JavaMode = ace.require("ace/mode/java").Mode;
-editor.session.setMode(new JavaMode());
-    </script>
-    <script>
-var step;
-
-function toggleEditor() {
-  var editor = document.getElementById('editor');
-  var presentation = document.getElementById('impress');
-  var bottom = editor.style.bottom;
-  var isClosed = bottom && bottom !== '100%';
-
-  function closeEditor() {
-    editor.style.bottom = '0';
-    presentation.style.display = 'none';
-    step = document.querySelector('.active');
-  }
-
-  function openEditor() {
-    editor.style.bottom = '100%';
-    presentation.style.display = 'block';
-    impress().goto(step);
-  }
-
-  if (isClosed) {
-     openEditor();
-  } else {
-     closeEditor();
-  }
-}
-toggleEditor();
-toggleEditor();
-    </script>
+    <script>impress().init();</script>
   </body>
 </html>
