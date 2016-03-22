@@ -32,29 +32,10 @@ h1, h2 {
   margin: 0;
 }
 
-.step .fill-width {
-  width: 100%;
-  height: auto;
-}
-
-.step .fill-height {
-  width: auto;
-  height: 100%;
-}
-
 .center {
   text-align: center;
 }
 
 .middle {
   vertical-align: middle;
-}
-
-.thumbnail {
-  max-width: 320px;
-  height: auto;
-}
-
-ol li ol {
-  list-style-type: lower-alpha;
 }
